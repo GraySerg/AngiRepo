@@ -11,8 +11,12 @@
         "action": "Make a Pizza",
         "done": false
     },
-        {
+    {
         "action": "Push a Cat",
+        "done": false
+    },
+    {
+        "action": "Arrange the array",
         "done": false
     }
 ]
