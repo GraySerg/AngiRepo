@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="GitApp">
+<head>
+    <title>Git Test</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/GitScript.js"></script>
+</head>
+<body ng-controller="GitController">
+    <h1>GiHub viewer</h1>
+    {{countdown}}
+    <div class="form-control">
+        <form name="searchUser" ng-submit="search(username)">
+            <input type="text" required placeholder="User to search" ng-model="username" />
+            <input class="success" type="submit" value="Search" />
+        </form>
+    </div>
+
+<div ng-show="user" ng-include="'UserDetails.html'">
+
+</div>
+
+
+</body>
+</html>

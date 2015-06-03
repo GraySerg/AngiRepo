@@ -1,0 +1,28 @@
+﻿<div id="userDetails">
+    <div class="page-header">
+        <h1>
+            {{user.login}}
+        </h1>
+    </div>
+    <div class="panel panel-body">
+        <img ng-src="{{user.avatar_url}}" />
+    </div>
+    Order by
+    <select ng-model="repoSortOrder" class="list-group">
+        <option value="-stargazers_count">Stars</option>
+        <option value="full_name" class="list-group-item-warning">Name</option>
+    </select>
+    <table class="table table-striped table-condensed">
+        <caption>Repository</caption>
+        <thead>
+            <tr><th>Name of repo</th><th>Stars</th><th>Language</th></tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in user.repoList | orderBy:repoSortOrder">
+                <td>{{item.full_name}}</td>
+                <td>{{item.stargazers_count | number}}</td>
+                <td>{{item.language}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
